@@ -1,0 +1,496 @@
+﻿<!DOCTYPE html>
+<style>
+    #addressInput {
+        width: 12vw; /* Adjust width as needed */
+        height: 43px; /* Adjust height as needed */
+        float: right;
+        border-radius: 15px;
+    }
+
+    #searchboxInput {
+        margin-bottom: 3px;
+        margin-top: 3px;
+        border-radius: 15px;
+        height: 37px;
+        width: 70vw;
+        margin-left: 5vw;
+        
+    }
+
+    #suggestionBox {
+        margin-bottom: 3px;
+        margin-top: 3px;
+        border: none;
+        height: 37px;
+        width: 69vw;
+        float: left;
+    }
+
+    .slider-container {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        box-sizing: border-box;
+        margin-left: 0vw;
+    }
+
+    .slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        height: 100%;
+    }
+
+    .Div_FilterHeader {
+        margin-top: auto;
+        height: 50px;
+        width: 80%;
+        float: left;
+        margin-left: 2vw;
+        margin-bottom: 5px;
+        background-color: white;
+    }
+
+    .div_supportzone {
+        margin-top: auto;
+        height: 50px;
+        width: 80%;
+        float: left;
+        margin-left: 2vw;
+        margin-bottom: 5px;
+        background-color: white;
+    }
+
+    .div_production-area {
+        margin-top: 1vw;
+        height: 700px;
+        width: 84%;
+        float: left;
+        margin-left: 2vw;
+        margin-bottom: 5px;
+        background-color: white;
+    }
+
+    #Logo1{
+        height:5px;
+    }
+    #Logo1 img{
+        height:50px;
+    }
+
+
+    .carousel {
+        position: relative;
+        width: 300px; /* Điều chỉnh theo kích thước hình ảnh của bạn */
+         /* Xóa bỏ margin để căn trái */
+        overflow: hidden;
+        float: left;
+    }
+    .product-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 20px 0;
+    }
+
+    .slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        padding-right: 30px;
+        
+    }
+        .slides img {
+            max-width: 80%;
+            margin: auto;
+            
+        }
+    .slide img{
+        width:20px;
+    }
+    .slide a{
+        text-decoration:none;
+        color: black;
+    }
+   
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+    .breadcrumb {
+        padding: 10px 20px;
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+    }
+
+        .breadcrumb a {
+            color: #ccc;
+            text-decoration: none;
+            margin-right: 5px;
+        }
+
+            .breadcrumb a::after {
+                content: ">";
+                margin-left: 5px;
+            }
+
+            .breadcrumb a:last-child::after {
+                content: "";
+            }
+    .left-column {
+        width: 30%;
+        float:left;
+        padding-right:30px;
+    }
+
+    .mid-column {
+        width: 40%;
+        padding-right: 20px;
+    }
+    .rating, .sold {
+        display: inline-block;
+        margin-right: 15px;
+    }
+    .rating{
+        color:yellow;
+    }
+
+    .price {
+        color: black;
+        font-size: 20px;
+        margin: 20px 0;
+        font-weight:bold;
+    }
+    .container {
+        display: flex;
+        width: 80%;
+        margin: auto;
+        padding: 20px;
+        background-color: #fff;
+        flex-direction: row;
+    }
+    .country{
+        font-size:revert;
+        color:lightgray
+    }
+    .taste{
+        font-weight:bold;
+    }
+    .type {
+        width:30px;
+        border: 1px solid black;
+        border-radius: 4px;
+    }
+    .shipping-info {
+        margin: 20px 0;
+        border: 1px solid #ddd;
+        border-radius:2px;
+        padding: 10px;
+        background-color: white;
+    }
+
+    .shipping-info h3 {
+        margin-top: 0;
+    }
+    .mid-column img {
+        width: 100px;
+    }
+    .mid-column br {
+        font-weight: bold;
+    }
+    .mid-column a {
+        display: inline-block;
+        text-decoration: none;
+        color: cornflowerblue;
+    }
+    .right-column {
+        width: 30%;
+        padding-left: 20px;
+    }
+    .seller {
+        color: #555;
+    }
+
+    .seller-name {
+        color: #007BFF;
+    }
+    .rating1 {
+        color: #ff4500;
+        font-size: 16px;
+    }
+
+        .rating1 span {
+            color: #555;
+        }
+
+    .product-info {
+        margin-top: 20px;
+    }
+
+    .quantity {
+        margin-bottom: 10px;
+    }
+
+        .quantity label {
+            margin-right: 10px;
+        }
+
+    .buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    button {
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .buy-now {
+        background-color: #FF4500;
+        color: #fff;
+        border-radius: 10px;
+    }
+
+    .add-to-cart {
+        background-color: white;
+        color: blue;
+        border:1px solid blue;
+        border-radius:10px;
+    }
+
+    .buy-later {
+        background-color: white;
+        color: blue;
+        border: 1px solid blue;
+        border-radius: 10px;
+    }
+    .cast{
+        font-weight:bold;
+        font-size:18px;
+    }
+  
+</style>
+<script language="JavaScript">
+    function CalculateTotal() {
+    var dg = parseFloat(document.getElementById("cast").value);
+        var sl = parseFloat(document.getElementById("quantity").value);
+    if (dg < 0) alert("đơn giá phải lớn hơn 0");
+   else if (sl < 1 && sl > 15) alert("số lượng phải nằm trong khoản 1-15");
+        window.document.getElementById(total).value = dg * sl;
+}
+function selectProduct(obj) {
+    var errMsg = document.getElementById(err_msg);
+    var value = obj.value;
+    if (value == '') {
+        err_msg.innerHTML = "hãy chọn sản phẩm";
+    } 
+}
+        function searchMap() {
+            const defaultAddress = "Phường Bến Nghé, Quận 1, Hồ Chí Minh";
+/*            const defaultLocation = "HUFLIT Sư Vạn Hạnh";*/
+            var address = document.getElementById('addressInput').value;
+            if (address) {
+                var url = 'https://www.google.com/maps/dir/?api=1&origin=' + encodeURIComponent(defaultAddress) + '&destination=' + encodeURIComponent(address);
+                window.open(url, '_blank');
+            }
+        }
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        const slides = document.querySelector('.slides');
+        const totalSlides = slides.children.length;
+        if (index >= totalSlides) {
+            currentIndex = 0;
+        } else if (index < 0) {
+            currentIndex = totalSlides - 1;
+        } else {
+            currentIndex = index;
+        }
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function nextSlide() {
+        showSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+        showSlide(currentIndex - 1);
+    }
+
+    showSlide(currentIndex);
+    </script>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div id="top1">
+        <h2 align="center" style="background-color:#EFFFF4; color:lightgreen">Freeship đơn từ 45k, giảm nhiều hơn cùng <span style="color:blue">FREESHIP</span> XTRA</h2>
+    </div>
+    <div id="top_header">
+        <div id="Logo1">
+
+            <img src="/Content/Image/tiki logo new.png" alt="Logo">
+        </div>
+
+        <div id="Div_Top_searchbar">
+            <input type="text" id="searchboxInput" placeholder=" Giá siêu rẻ">
+            <button onlick="updateSuggestion()" style="background-color: white ; color: blue; cursor: pointer;border-radius:15px;height:37px;width:10vw;margin-top:3px;margin-bottom:3px;">
+                Tìm kiếm
+            </button>
+        </div>
+
+        <div id="Div_UserArea1">
+            <div style="display:flex;gap:2px;align-items:center">
+                <img src="/Content/Image/home 1.png" alt="homeico1" height="25" width="25">
+                <div style="font-size:20px;gap:5px;font-weight:500;"> Trang chủ </div>
+                <img src="/Content/Image/account.png" alt="smileaccount" height="25" width="25">
+                <div style="font-size:20px;font-weight:500;gap:5px;"> Tài khoản </div>
+                <img src="/Content/Image/shopping cart.png" height="25" width="25" alt="cart">
+            </div>
+
+        </div>
+        <div id="Div_Suggestion_Area">
+            <input list="suggestions" id="suggestionBox" placeholder="điện gia dụng        xe cộ          mẹ &amp; bé          khỏe đẹp        nhà cửa        sách          thể thao          iphone 13           điện thoại           ipad air 5         oppo a17k">
+            <datalist id="suggestions"></datalist>
+        </div>
+
+        <div id="Div_UserArea2">
+            <form id="addressForm" onsubmit="event.preventDefault(); searchMap();">
+                <div style="display:flex; gap:4px;padding-inline:6px; align-items:center">
+                    <img src="/Content/Image/location.png" alt="location ico" width="20" height="20">
+                    <div style="font-size:18px;font-weight:500;white-space:nowrap"> Giao đến</div>
+                    <input type="text" id="addressInput" name="addressInput" style="text-underline-offset:auto">
+                </div>
+
+            </form>
+        </div>
+        <div id="Div_BelowHeader" style="margin-top:10px;">
+
+            <div style="display:flex;gap:12px;align-items:center">
+                <div style="display:flex;gap:4px;padding-inline:6px;align-items:center">
+                    <div style="font-size:12px;font-weight:500;white-space:nowrap">Cam Kết</div>
+                </div>
+                <div style="display:flex;gap:4px;padding-inline:6px;align-items:center">
+                    <img src="/Content/Image/check.png" alt="check-ico" width="30" height="30">
+                    <div style="font-size:12px;font-weight:500;white-space:nowrap">100% hàng thật</div>
+                </div>
+                <div style="width:1px;height:30px"></div>
+                <div style="display:flex;gap:4px; padding-inline:6px;align-items:center">
+                    <img src="/Content/Image/cashback.png" alt="cashback" width="20" height="20">
+                    <div style="font-size:12px;font-weight:500;white-space:nowrap"> Hoàn 200% nếu hàng giả </div>
+                </div>
+                <div style="width:1px;height:30px"></div>
+                <div style="display:flex;gap:4px;padding-inline:6px;align-items:center">
+                    <img src="/Content/Image/guarantee 3.png" alt="guarantee 3" height="30" width="30">
+                    <div style="font-size:12px;font-weight:500;white-space:nowrap"> 30 ngày đổi trả </div>
+                </div>
+                <div style="width:1px;height:30px"></div>
+                <div style="display:flex;gap:4px;padding-inline:6px;align-items:center">
+                    <img src="/Content/Image/delivery.png" alt="delivery ico" height="30" width="30">
+                    <div style="font-size:12px;font-weight:500;white-space:nowrap"> Giao hàng nhanh 2h </div>
+                </div>
+                <div style="width:1px;height:30px"></div>
+                <div style="display:flex;gap:4px;padding-inline:6px;align-items:center">
+                    <img src="/Content/Image/best pricing.png" alt="best pricing.ico" height="30" width="30">
+                    <div style="font-size:12px;font-weight:500;white-space:nowrap"> Giá siêu rẻ </div>
+                </div>
+                <div style="width:1px;height:30px"></div>
+                <div style="display:flex;gap:4px;padding-inline:6px;align-items:center">
+                    <img src="/Content/Image/freeshiping.png" alt="freeshipping.ico" height="30" width="30">
+                    <div style="font-size:12px;font-weight:500;white-space:nowrap"> Freeship mọi đơn </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="breadcrumb">
+        <a href="https://tiki.vn/">Trang chủ</a>
+        <a href="https://tiki.vn/do-choi-me-be/c2549">Đồ Chơi - Mẹ & Bé</a>
+        <a href="https://tiki.vn/dinh-duong-cho-nguoi-lon/c10418">Dinh dưỡng cho người lớn</a>
+        <a href="https://tiki.vn/sua-bot-chuc-nang-cho-nguoi-lon/c68460">Sữa bột chức năng cho người lớn</a>
+        <a href="https://tiki.vn/lon-sua-glucerna-850g-lon-tang-1-chai-glucerna-nuoc-220ml-p250100513.html?spid=250100515">Lon Sữa Glucerna 800g/lon - Tặng 2 gói dùng thử</a>
+    </div>
+    <div class="container">
+        <div class="left-column">
+            <div class="carousel">
+                <div class="slides">
+                    <img src="~/Content/Image/glucerna2.jpg" alt="Image 1">
+                    <img src="~/Content/Image/Glucerna 3.jpg" alt="Image 2">
+                    <img src="~/Content/Image/Glucerna 4.jpg" alt="Image 3">
+                    <img src="~/Content/Image/glucerna.jpg" alt="Image 4"/>
+                </div>
+                <div class="slide"><img src="~/Content/Image/cc gi day.png" /><a href="~/Views/Home/Contact.cshtml">Xem thêm Ưu điểm & lưu ý của sản phẩm</a></div>
+                <button class="prev" onclick="prevSlide()">&#10094;</button>
+                <button class="next" onclick="nextSlide()">&#10095;</button>
+            </div>
+        </div>
+        <div class="mid-column">
+            <img src="~/Content/Image/topdeal.png" />
+            <img src="~/Content/Image/30 ngay doi tra.png" />
+            <img src="~/Content/Image/chinhhang1.png" />
+            <br>Thương Hiệu: <a href="https://tiki.vn/thuong-hieu/glucerna.html">Glucerna</a>
+            <h1 class="product-title">Lon Sữa Glucerna 800g/lon - Tặng 2 gói dùng thử</h1>
+            <div class="rating">&#9733;&#9733;&#9733;&#9733;&#9733; (12)</div>
+            <div class="sold">Đã bán 444</div>
+            <p class="country">Made in Spain</p>
+            <p class="price">1.034.550₫</p>
+            <p class="taste">Hương vị</p>
+            <p class="type">Vani</p>
+            <div class="shipping-info">
+                <h3>Thông tin vận chuyển</h3>
+                <ul>
+                    <li>Giao tới Quận 1, phường Bến Nghé, TP. Hồ Chí Minh</li>
+                    <br />
+                    <li>
+                        <img src="~/Content/Image/now deli.png" />Giao siêu tốc 2h
+                        <br />trước 10h sáng ngày mai
+                    </li>
+                    <li ><img src="~/Content/Image/mat troi moc.png" />Giao hàng chuẩn bị vào chiều hôm sau
+                        <br /> 13h - 18h,8/10</li>
+                    <li ><img src="~/Content/Image/free.png" />Freeship 10k đơn từ 45.000₫,Freeship 25k đơn từ 100.000₫
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right-column">
+
+            <h1 class="product-title1">Vani</h1>
+            <p class="seller">Bán bởi: <span class="seller-name">Tiki Trading</span></p>
+            <p class="rating1">Đánh giá: 4.7 <span>(5.5k+ đánh giá)</span></p>
+            <div class="product-info">
+                <div class="quantity">
+                    <label for="quantity">Số Lượng:</label>
+                    <input type="number" id="quantity" name="quantity" value="1" min="1">
+                </div>
+               <br id="total"name="total" >tạm tính <p class="cast" id="cast"name="cast">1.034.550₫</p>
+                <div class="buttons">
+                    <button class="buy-now">Mua ngay<br /></button>
+                    
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                    
+                    <button class="buy-later">Mua trước trả sau<br /></button>
+                </div>
+            </div>
+        </div>
+    </div>
+      <section>
+                @RenderBody()
+      </section>
+</body>
+</html>
